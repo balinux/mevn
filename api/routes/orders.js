@@ -8,8 +8,14 @@ router.get('/',(req,res,next) => {
 })
 
 router.post('/',(req,res,next) => {
+  const orderTravel = {
+    name:req.body.name,
+    email: req.body.email
+  }
+    
   res.status(200).json({
-      message: "handle post Message"
+      message: "handle post Message",
+      order:orderTravel
   })
 })
 
