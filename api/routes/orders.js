@@ -7,17 +7,25 @@ const Order = require('../models/order');
 router.get('/',(req,res,next) => {
   Order
     .find()
-    .select("_id, name, email")
+    // .select("_id, name, email")
     .exec()
     .then(docs => {
     console.log(docs)
     const response = {
       count : docs.length,
-      orders: docs.map({
-        
+      orders: docs.map(doc => {
+        return {
+          name:doc.name,
+          email:doc.email,
+          _id:doc._id,
+          requres:{
+            type: "GET",
+            url:'http://localhost:3000/order/'+doc._id
+          }
+        }
       })
     }
-    res.status(200).json(docs);
+    res.status(200).json(response);
   }).catch(error => {
     console.log(error)
       res.status(500).json({
