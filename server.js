@@ -10,7 +10,7 @@ var app = require('./app');
 //   response.sendFile(__dirname + '/views/index.html');
 // });
 
-const server = http.CreateServer(app);
+const server = http.createServer(app);
 
 
 var listener = app.listen(process.env.PORT, function () {
