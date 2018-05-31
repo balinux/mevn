@@ -66,10 +66,10 @@ router.get('/:orderId',(req, res, next) => {
 })
 
 router.delete('/:orderId', (req, res, next) => {
-  const id = req.params.id;
+  const id = req.params.orderId;
   
   Order
-    .remove({_id:id})
+    .findOneAndRemove({_id:id})
     .exec()
     .then(result => {
     console.log(result)
