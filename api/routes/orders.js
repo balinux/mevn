@@ -7,9 +7,16 @@ const Order = require('../models/order');
 router.get('/',(req,res,next) => {
   Order
     .find()
+    .select("_id, name, email")
     .exec()
     .then(docs => {
     console.log(docs)
+    const response = {
+      count : docs.length,
+      orders: docs.map({
+        
+      })
+    }
     res.status(200).json(docs);
   }).catch(error => {
     console.log(error)
