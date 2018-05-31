@@ -7,7 +7,7 @@ const Order = require('../models/order');
 router.get('/',(req,res,next) => {
   Order
     .find()
-    // .select("_id, name, email")
+    .select("_id name email")
     .exec()
     .then(docs => {
     console.log(docs)
@@ -53,7 +53,18 @@ router.post('/',(req,res,next) => {
     .save()
     .then(result => {
     console.log(result)
-  }).catch(error => {
+    res.status(200).json({
+        createdOrder : {
+          name:result.name,
+          email:result.email,
+          _id:result._id,
+          request:{
+          type:'GET',
+          url:'http://localhost:3000/order/'+result._id          
+          }
+        }
+    })    
+      }).catch(error => {
     console.log(error)
   })
   
