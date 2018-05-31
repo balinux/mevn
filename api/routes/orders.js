@@ -5,6 +5,15 @@ const mongoose = require('mongoose');
 const Order = require('../models/order');
 
 router.get('/',(req,res,next) => {
+  Order
+    .find()
+    .exec()
+    .then(doc => {
+    console.log(doc)
+    res.status(200).json(doc);
+  }).catch(error => {
+    console.log(error)
+  })
   res.status(200).json({
       message: "handle get Message"
   })
@@ -17,7 +26,7 @@ router.post('/',(req,res,next) => {
   }
   
   const order = new Order({
-    _id:mongoose.Types.ObjectId(),
+    _id:new mongoose.Types.ObjectId(),
     name:req.body.name,
     email:req.body.email
   })
