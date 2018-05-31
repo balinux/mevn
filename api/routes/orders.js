@@ -87,6 +87,7 @@ router.patch('/:orderId', (req, res, next) => {
   const id = req.params.orderId;
   const updateOps = {};
   
+//   memilih salah satu data yang di update
   for(const ops of req.body){
     updateOps[ops.propName] = ops.value;
   }
