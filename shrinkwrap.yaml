@@ -1,6 +1,7 @@
 dependencies:
   body-parser: 1.18.3
   express: 4.16.3
+  mongoose: 5.1.3
   morgan: 1.9.0
   nodemon: 1.17.5
 packages:
@@ -82,6 +83,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-GdOGodntxufByF04iu28xW0zYC0=
+  /async/2.1.4:
+    dependencies:
+      lodash: 4.17.10
+    dev: false
+    resolution:
+      integrity: sha1-LSFgx3iAMuTdbL4lAvH5osj2zeQ=
   /atob/2.1.1:
     dev: false
     engines:
@@ -120,6 +127,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-RqoXUftqL5PuXmibsQh9SxTGwgU=
+  /bluebird/3.5.0:
+    dev: false
+    resolution:
+      integrity: sha1-eRQg1/VR7qKJdFOop3ZT+WYG1nw=
   /body-parser/1.18.2:
     dependencies:
       bytes: 3.0.0
@@ -192,6 +203,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-aNdbnj9P8PjdXU4ybaWLK2IF3jc/EoDYbC7AazW6to3TRsfXxscC9UXOB5iDiEQrkyIbWp2SLQda4+QAa7nc3w==
+  /bson/1.0.6:
+    dev: false
+    engines:
+      node: '>=0.6.19'
+    resolution:
+      integrity: sha512-D8zmlb46xfuK2gGvKmUjIklQEouN2nQ0LEHHeZ/NoHM2LDiMk2EYzZ5Ntw/Urk+bgMDosOZxaRzXxvhI5TcAVQ==
   /bytes/3.0.0:
     dev: false
     engines:
@@ -1028,6 +1045,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
+  /kareem/2.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-ycoMY1tVkcH1/NaxGn2erZaUC3CodmX7Fl6DUVXjN73+uecWYTaaldRkxNY3HeSKQnQTWnoxRKnZfVHcB8tIWg==
   /kind-of/3.2.2:
     dependencies:
       is-buffer: 1.1.6
@@ -1064,6 +1085,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-ogU4P+oyKzO1rjsYq+4NwvNW7hU=
+  /lodash.get/4.4.2:
+    dev: false
+    resolution:
+      integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+  /lodash/4.17.10:
+    dev: false
+    resolution:
+      integrity: sha512-UejweD1pDoXu+AD825lWwp4ZGtSwgnpZxb3JDViD7StjQz+Nb/6l093lx4OQ0foGWNRoc19mWy7BzL+UAK2iVg==
   /lowercase-keys/1.0.1:
     dev: false
     engines:
@@ -1176,6 +1205,45 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-8ZItLHeEgaqEvd5lYBXfm4EZSFCX29Jb9K+lAHhDKzReKBQKj3R+7NOF6tjqYi9t4oI8VUfaWITJQm86wnXGNQ==
+  /mongodb-core/3.0.8:
+    dependencies:
+      bson: 1.0.6
+      require_optional: 1.0.1
+    dev: false
+    resolution:
+      integrity: sha512-dFxfhH9N7ohuQnINyIl6dqEF8sYOE0WKuymrFf3L3cipJNrx+S8rAbNOTwa00/fuJCjBMJNFsaA+R2N16//UIw==
+  /mongodb/3.0.8:
+    dependencies:
+      mongodb-core: 3.0.8
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-mj7yIUyAr9xnO2ev8pcVJ9uX7gSum5LLs1qIFoWLxA5Il50+jcojKtaO1/TbexsScZ9Poz00Pc3b86GiSqJ7WA==
+  /mongoose-legacy-pluralize/1.0.2:
+    dev: false
+    peerDependencies:
+      mongoose: '*'
+    resolution:
+      integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
+  /mongoose/5.1.3:
+    dependencies:
+      async: 2.1.4
+      bson: 1.0.6
+      kareem: 2.1.0
+      lodash.get: 4.4.2
+      mongodb: 3.0.8
+      mongoose-legacy-pluralize: 1.0.2
+      mpath: 0.4.1
+      mquery: 3.0.0
+      ms: 2.0.0
+      regexp-clone: 0.0.1
+      sliced: 1.0.1
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    resolution:
+      integrity: sha512-v+hHI/NxJtcVPm2cY+/kJfTfkkXVCz/le0iVdnh3enGi+fClhoaztjTtXQMdzIzNc+M0R93KcARpzvPQq/cWKQ==
   /morgan/1.9.0:
     dependencies:
       basic-auth: 2.0.0
@@ -1188,6 +1256,21 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-0B+mxlhZt2/PMbPLU6OCGjEdgFE=
+  /mpath/0.4.1:
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    resolution:
+      integrity: sha512-NNY/MpBkALb9jJmjpBlIi6GRoLveLUM0pJzgbp9vY9F7IQEb/HREC/nxrixechcQwd1NevOhJnWWV8QQQRE+OA==
+  /mquery/3.0.0:
+    dependencies:
+      bluebird: 3.5.0
+      debug: 2.6.9
+      regexp-clone: 0.0.1
+      sliced: 0.0.5
+    dev: false
+    resolution:
+      integrity: sha512-WL1Lk8v4l8VFSSwN3yCzY9TXw+fKVYKn6f+w86TRzOLSE8k1yTgGaLBPUByJQi8VcLbOdnUneFV/y3Kv874pnQ==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -1491,6 +1574,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-J6SDjUgDxQj5NusnOtdFxDwN/+HWykR8GELwctJ7mdqhcyy1xEc4SRFHUXvxTp661YaVKAjfRLZ9cCqS6tn32A==
+  /regexp-clone/0.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-p8LgmJH9vzj7sQ03b7cwA+aKxYk=
   /registry-auth-token/3.3.2:
     dependencies:
       rc: 1.2.8
@@ -1522,6 +1609,19 @@ packages:
       node: '>=0.10'
     resolution:
       integrity: sha1-jcrkcOHIirwtYA//Sndihtp15jc=
+  /require_optional/1.0.1:
+    dependencies:
+      resolve-from: 2.0.0
+      semver: 5.5.0
+    dev: false
+    resolution:
+      integrity: sha512-qhM/y57enGWHAe3v/NcwML6a3/vfESLe/sGM2dII+gEO0BpKRUkWZow/tyloNqJyN6kXSl3RyyM8Ll5D/sJP8g==
+  /resolve-from/2.0.0:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-lICrIOlP+h2egKgEx+oUdhGWa1c=
   /resolve-url/0.2.1:
     dev: false
     resolution:
@@ -1647,6 +1747,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
+  /sliced/0.0.5:
+    dev: false
+    resolution:
+      integrity: sha1-XtwETKTrb3gW1Qui/GPiXY/kcH8=
+  /sliced/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E=
   /snapdragon-node/2.1.1:
     dependencies:
       define-property: 1.0.0
@@ -1988,5 +2096,6 @@ shrinkwrapVersion: 3
 specifiers:
   body-parser: ^1.18.3
   express: ^4.16.3
+  mongoose: ^5.1.3
   morgan: ^1.9.0
   nodemon: ^1.17.5

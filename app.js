@@ -2,12 +2,22 @@ const express  = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose =  require('mongoose');
 
 const orderRouter = require('./api/routes/orders');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+
+// mongoose
+mongoose.connect('mongodb+srv://balinux:123N!NJUTSU@balinuxtravel-aozgg.mongodb.net/test?retryWrites=true', (
+  {
+    useMongoClient:true
+  }
+))
+
+// route
 app.use('/order', orderRouter)
 
 // Cors
