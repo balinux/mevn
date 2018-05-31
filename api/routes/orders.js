@@ -45,8 +45,14 @@ router.post('/',(req,res,next) => {
   
   res.status(200).json({
       message: "handle post Message",
-      order:orderTravel
+      order:order
   })
+})
+
+// detail order
+
+router.get((req, res, next) => {
+  Order.findById
 })
 
 module.exports = router;
