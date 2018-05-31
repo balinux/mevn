@@ -51,8 +51,36 @@ router.post('/',(req,res,next) => {
 
 // detail order
 
-router.get((req, res, next) => {
-  Order.findById
+router.get('/:orderId',(req, res, next) => {
+  const id = req.params.orderId;
+  
+  Order
+    .findById(id)
+    .then(result => {
+    console.log(result)
+    res.status(200).json(result)
+  }).catch(error => {
+    console.log(error)
+    res.status(500).json({error:error})    
+  })
+})
+
+router.delete('/:orderId', (req, res, next) => {
+  const id = req.params.id;
+  
+  Order
+    .remove({_id:id})
+    .exec()
+    .then(result => {
+    console.log(result)
+    res.status(200).json(result)
+  })
+    .catch(error => {
+  console.log(error)
+    res.status(500).json({
+      error:error
+    })
+  })
 })
 
 module.exports = router;
