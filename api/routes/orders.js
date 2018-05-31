@@ -83,4 +83,27 @@ router.delete('/:orderId', (req, res, next) => {
   })
 })
 
+router.patch('/:orderId', (req, res, next) => {
+  const id = req.params.orderId;
+  const updateOps = {};
+  
+  for(const ops of req.body){
+    updateOps[ops.propName] = ops.value;
+  }
+  
+  Order
+    .update({_id:id}, {$set:updateOps})
+    .exec()
+    .then(result => {
+    console.log(result)
+    res.status(200).json(result)
+  })
+    .catch(error => {
+  console.log(error)
+    res.status(500).json({
+      error:error
+    })
+  })
+})
+
 module.exports = router;
