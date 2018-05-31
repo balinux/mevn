@@ -8,15 +8,18 @@ router.get('/',(req,res,next) => {
   Order
     .find()
     .exec()
-    .then(doc => {
-    console.log(doc)
-    res.status(200).json(doc);
+    .then(docs => {
+    console.log(docs)
+    res.status(200).json(docs);
   }).catch(error => {
     console.log(error)
+      res.status(500).json({
+        error: error
+      });
   })
-  res.status(200).json({
-      message: "handle get Message"
-  })
+  // res.status(200).json({
+  //     message: "handle get Message"
+  // })
 })
 
 router.post('/',(req,res,next) => {

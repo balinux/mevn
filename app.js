@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 // mongoose
-mongoose.connect('mongodb+srv://balinux:123N!NJUTSU@balinuxtravel-aozgg.mongodb.net/test?retryWrites=true', (
+mongoose.connect('mongodb+srv://balinux:balinux@balinuxtravel-aozgg.mongodb.net/test?retryWrites=true', (
   {
     useMongoClient:true
   }
